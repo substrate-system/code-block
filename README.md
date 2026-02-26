@@ -2,13 +2,14 @@
 [![tests](https://img.shields.io/github/actions/workflow/status/substrate-system/code-block/nodejs.yml?style=flat-square)](https://github.com/substrate-system/code-block/actions/workflows/nodejs.yml)
 [![types](https://img.shields.io/npm/types/@substrate-system/code-block?style=flat-square)](README.md)
 [![module](https://img.shields.io/badge/module-ESM%2FCJS-blue?style=flat-square)](README.md)
-[![install size](https://flat.badgen.net/packagephobia/install/@bicycle-codes/keys?cache-control=no-cache)](https://packagephobia.com/result?p=@bicycle-codes/keys)
-[![GZip size](https://img.badgesize.io/https%3A%2F%2Fesm.sh%2F%40substrate-system%2Fcode-block%2Fes2022%2Ffile.mjs?style=flat-square&compression=gzip)](https://esm.sh/@substrate-system/code-block/es2022/code-block.mjs)
+[![install size](https://flat.badgen.net/packagephobia/install/@substrate-system/code-block?cache-control=no-cache)](https://packagephobia.com/result?p=@substrate-system/code-block)
+[![GZip size](https://flat.badgen.net/bundlephobia/minzip/@substrate-system/code-block)](https://bundlephobia.com/package/@substrate-system/code-block)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
 [![Common Changelog](https://nichoth.github.io/badge/common-changelog.svg)](./CHANGELOG.md)
 [![license](https://img.shields.io/badge/license-Big_Time-blue?style=flat-square)](LICENSE)
 
-A web component that renders a `<pre><code>` block with an integrated copy icon button, powered by `@substrate-system/copy-button`.
+A web component that renders a `<pre><code>` block with an internal copy
+icon button.
 
 [See a live demo](https://substrate-system.github.io/code-block/)
 
@@ -49,6 +50,7 @@ This package exposes ESM and CommonJS via
 [package.json `exports` field](https://nodejs.org/api/packages.html#exports).
 
 ### `@substrate-system/code-block`
+
 Full component (render + hydrate). It registers `<code-block>` when imported.
 
 ```js
@@ -58,12 +60,13 @@ import '@substrate-system/code-block/css'
 
 ```html
 <code-block>
-const answer = 42
+  const answer = 42
 </code-block>
 ```
 
 ### `@substrate-system/code-block/client`
-Client-only behavior (hydration only). Use this for HTML that was
+
+Client-only behavior (hydration only). Use this to hydrate HTML that was
 rendered on the server.
 
 ```js
@@ -74,6 +77,7 @@ define()
 ```
 
 ### `@substrate-system/code-block/html`
+
 Server-side HTML renderer.
 
 ```js
@@ -109,37 +113,8 @@ Or minified:
 import '@substrate-system/code-block/min/css'
 ```
 
-### CSS Variables
 
-Set these on `code-block`:
-
-1. `--code-block-background` (default: `#f6f8fa`)
-    Background color for the code block.
-2. `--code-block-border` (default: `#d0d7de`)
-    Border color for the code block.
-3. `--code-block-foreground` (default: `#24292f`)
-    Code text color.
-4. `--code-block-focus` (default: `#0969da`)
-    Focus ring color for the copy button.
-5. `--code-block-copy` (default: `#57606a`)
-    Default icon color for the copy glyph.
-6. `--code-block-copy-success` (default: `#1f883d`)
-    Icon color after successful copy.
-
-Example:
-
-```css
-code-block {
-    --code-block-background: #0f172a;
-    --code-block-border: #334155;
-    --code-block-foreground: #e2e8f0;
-    --code-block-focus: #38bdf8;
-    --code-block-copy: #cbd5e1;
-    --code-block-copy-success: #22c55e;
-}
-```
-
-## Host Attributes
+## Attributes
 
 Supported on `<code-block>`:
 
@@ -147,6 +122,7 @@ Supported on `<code-block>`:
    to disable.
 2. `copy-button-label` &mdash; Accessible label/title for the icon button.
    Default: `Copy code to clipboard`.
+
 
 
 ## SSR + Hydration Example
