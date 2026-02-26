@@ -18,6 +18,7 @@ icon button.
 <!-- toc -->
 
 - [Install](#install)
+- [Example](#example)
 - [API](#api)
   * [`@substrate-system/code-block`](#substrate-systemcode-block)
   * [`@substrate-system/code-block/client`](#substrate-systemcode-blockclient)
@@ -25,8 +26,7 @@ icon button.
   * [CommonJS](#commonjs)
 - [CSS](#css)
   * [Import CSS](#import-css)
-  * [CSS Variables](#css-variables)
-- [Host Attributes](#host-attributes)
+- [Attributes](#attributes)
 - [SSR + Hydration Example](#ssr--hydration-example)
   * [Server](#server)
   * [Client](#client)
