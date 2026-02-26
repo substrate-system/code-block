@@ -24,7 +24,7 @@ A web component that renders a `<pre><code>` block with an integrated copy icon 
   * [CommonJS](#commonjs)
 - [CSS](#css)
   * [Import CSS](#import-css)
-  * [CSS Variables (complete)](#css-variables-complete)
+  * [CSS Variables](#css-variables)
 - [Host Attributes](#host-attributes)
 - [SSR + Hydration Example](#ssr--hydration-example)
   * [Server](#server)
