@@ -8,8 +8,7 @@
 [![Common Changelog](https://nichoth.github.io/badge/common-changelog.svg)](./CHANGELOG.md)
 [![license](https://img.shields.io/badge/license-Big_Time-blue?style=flat-square)](LICENSE)
 
-A web component that renders a `<pre><code>` block with an internal copy
-icon button.
+A web component that renders `<pre><code>` tags and a copy icon button.
 
 [See a live demo](https://substrate-system.github.io/code-block/)
 
