@@ -65,7 +65,7 @@ export const CodeBlock:CodeBlockRenderer = (options:CodeBlockOptions = {}) => {
     ).trim()
     const preClasses = ['code-block-pre', languageClass].filter(Boolean).join(' ')
     const codeClasses = [languageClass].filter(Boolean).join(' ')
-    const label = options.copyButtonLabel ?? 'Copy code to clipboard'
+    const label = options.copyButtonLabel ?? 'Copy to clipboard'
     const safeCode = escapeHtml(code)
     const codeClassAttr = codeClasses ? ` class="${escapeHtml(codeClasses)}"` : ''
 

@@ -48,14 +48,73 @@ npm i -S @substrate-system/code-block
 ```js
 import '@substrate-system/code-block'
 import '@substrate-system/code-block/css'
-
 ```
+
+### Basic
+
+Renders a simple `<pre>` tag with copy icon button.
 
 ```html
 <code-block>
   const answer = 42
 </code-block>
 ```
+
+### Example With Attributes
+
+Use `hint` for copy feedback, `copy-button-label` for accessibility,
+and a `language-*` class for syntax highlighting.
+
+```html
+<code-block
+  hint="Copied!"
+  copy-button-label="Copy this example"
+  class="language-js"
+>
+  const foo = 'bar'
+</code-block>
+```
+
+### Syntax Highlighting with Prism
+
+[Prism](https://prismjs.com/) is a lightweight syntax highlighting
+library. It works by finding `<code>` elements with a `language-*`
+class and colorizing their contents.
+
+Since `code-block` forwards `language-*` classes to its inner
+`<pre>` and `<code>` elements, Prism works out of the box.
+Just load Prism's JS and CSS alongside the component.
+
+The included [example](./example/) demonstrates this:
+
+```html
+<!-- example/index.html -->
+<head>
+    <link rel="stylesheet" href="./prism.css">
+</head>
+<body>
+    <script src="./prism.js"></script>
+    <script type="module" src="./index.ts"></script>
+</body>
+```
+
+```ts
+// example/index.ts
+import '@substrate-system/code-block'
+import '@substrate-system/code-block/css'
+
+const block = document.createElement('code-block')
+block.classList.add('language-javascript')
+block.textContent = `const answer = 42`
+document.body.append(block)
+```
+
+Prism detects the `language-javascript` class on the inner
+`<code>` element and highlights it automatically. Any Prism
+theme CSS can be swapped in for different color schemes.
+
+
+---
 
 ## API
 
@@ -131,12 +190,29 @@ import '@substrate-system/code-block/min/css'
 
 Supported on `<code-block>`:
 
-1. `hint` &mdash; Enables copy feedback hint when present. Use `hint="false"`
-   to disable.
-2. `copy-button-label` &mdash; Accessible label/title for the icon button.
-   Default: `Copy code to clipboard`.
+1. `hint` &mdash; Enables copy feedback hint when present
+   (enabled by default). Use `hint="false"` to disable, or
+   pass a custom string like `hint="Copied!"`.
+2. `copy-button-label` &mdash; Accessible label/title for the
+   copy icon button. Default: `Copy code to clipboard`.
+3. `class="language-*"` &mdash; Adds a language class to the
+   inner `<pre>` and `<code>` elements for syntax highlighting
+   (e.g. `language-js`, `language-html`). Works with any
+   highlighting library that targets `language-*` classes, such
+   as [Prism](https://prismjs.com/) or
+   [highlight.js](https://highlightjs.org/).
 
+#### Example with all attributes
 
+```html
+<code-block
+  hint="Copied!"
+  copy-button-label="Copy this snippet"
+  class="language-js"
+>
+  const answer = 42
+</code-block>
+```
 
 ## SSR + Hydration Example
 
