@@ -18,6 +18,9 @@ A web component that renders `<pre><code>` tags and a copy icon button.
 
 - [Install](#install)
 - [Example](#example)
+  * [Basic](#basic)
+  * [Example With Attributes](#example-with-attributes)
+  * [Syntax Highlighting with Prism](#syntax-highlighting-with-prism)
 - [API](#api)
   * [`@substrate-system/code-block`](#substrate-systemcode-block)
   * [`@substrate-system/code-block/client`](#substrate-systemcode-blockclient)
